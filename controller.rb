@@ -1,6 +1,8 @@
 
 require_relative 'view'
 require_relative 'models'
+require 'sqlite3'
+$db = SQLite3::Database.open('flash_cards.db')
 
 class Controller
   attr_reader :view, :flashcard
@@ -9,8 +11,13 @@ class Controller
     @view=View.new
   end
 
+  def random_id
+    @rand_id_no = rand(11) + 1
+  end
+
   def select_flashcard
-    #select flash card from data base
+    random_id
+    array_of_flashcard = $db.execute("SELECT question, answer FROM flashcards WHERE id = #{@random_id_no}")
     create_flashcard_object(1,"Does this work?","true")
   end
 
