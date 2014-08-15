@@ -15,6 +15,20 @@ class View
     puts ":'("
   end
 
+  def question_prompt
+    puts " "
+    puts "Please enter a question"
+  end
+
+  def answer_prompt
+    puts " "
+    puts "Please enter the answer"
+  end
+
+  def exit_message
+    puts "Goodbye for now ;)"
+  end
+
 
 end
 

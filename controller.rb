@@ -42,6 +42,31 @@ class Controller
     flashcard.answer
   end
 
+  def get_flashcard_properties
+    question=get_question
+    answer=get_answer
+    add_flashcard(question, answer)
+  end
+
+  def get_question
+    view.question_prompt
+    gets.chomp
+  end
+
+  def get_answer
+    view.answer_prompt
+    gets.chomp
+  end
+
+
+  def add_flashcard(question, answer)
+    #Shout out to amelia
+  end
+
+  def exit_message
+    view.exit_message
+  end
+
 
 
 

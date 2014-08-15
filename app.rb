@@ -22,7 +22,13 @@ class App
     user_input=gets.chomp
     controller.check_answer(user_input)
     user_input=gets.chomp
-    unless user_input=="exit"
+    if user_input=="exit"
+      controller.exit_message
+      puts "Goodbye for now ;)"
+    elsif user_input=="add"
+      controller.get_flashcard_properties
+      run
+    else
       run
     end
 
