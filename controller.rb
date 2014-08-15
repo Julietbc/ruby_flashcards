@@ -24,14 +24,17 @@ class Controller
     create_flashcard_object(question, answer)
   end
 
-  def create_flashcard_object(id,question,answer)
-    @flashcard = Flashcard.new(id,question,answer)
+  def create_flashcard_object(question,answer)
+    @flashcard = Flashcard.new(question,answer)
     view.display_question(flashcard)
   end
 
   def check_answer(user_input)
-    load_answer
-
+    if load_answer == user_input
+      view.correct
+    else
+      view.incorrect
+    end
   end
 
 

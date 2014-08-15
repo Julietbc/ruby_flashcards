@@ -16,10 +16,15 @@ class App
   end
 
   def run
-    controller.select_flashcard
-    puts "True or False?"
+    controller.random_id
+    puts "t or f?"
+    puts " "
     user_input=gets.chomp
     controller.check_answer(user_input)
+    user_input=gets.chomp
+    unless user_input=="exit"
+      run
+    end
 
   end
 
