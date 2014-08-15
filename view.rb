@@ -6,6 +6,14 @@ class View
     puts flashcard.question
   end
 
+  def correct
+    puts "Correct!"
+  end
+
+  def incorrect
+    puts ":'("
+  end
+
 
 end
 

@@ -11,7 +11,7 @@ class Controller
 
   def select_flashcard
     #select flash card from data base
-    create_flashcard_object(1,"Does this work?","true")
+    create_flashcard_object(1,"Does this work?","t")
   end
 
   def create_flashcard_object(id,question,answer)
@@ -20,8 +20,11 @@ class Controller
   end
 
   def check_answer(user_input)
-    load_answer
-
+    if load_answer == user_input
+      view.correct
+    else
+      view.incorrect
+    end
   end
 
 

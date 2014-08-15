@@ -6,5 +6,7 @@ class Flashcard
     @answer=answer
   end
 
-
 end
+
+
+
