@@ -19,8 +19,17 @@ class Controller
     view.display_question(flashcard)
   end
 
-  def load_answer
+  def check_answer(user_input)
+    load_answer
+
   end
+
+
+  def load_answer
+    flashcard.answer
+  end
+
+
 
 
 end
