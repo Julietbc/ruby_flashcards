@@ -11,11 +11,11 @@ class Controller
 
   def select_flashcard
     #select flash card from data base
-    create_flashcard_object(1,"Does this work?","t")
+    create_flashcard_object("Does this work?","t")
   end
 
-  def create_flashcard_object(id,question,answer)
-    @flashcard = Flashcard.new(id,question,answer)
+  def create_flashcard_object(question,answer)
+    @flashcard = Flashcard.new(question,answer)
     view.display_question(flashcard)
   end
 

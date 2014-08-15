@@ -16,7 +16,7 @@ class App
   end
 
   def run
-    controller.select_flashcard
+    controller.random_id
     puts "t or f?"
     puts " "
     user_input=gets.chomp
