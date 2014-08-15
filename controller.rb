@@ -12,7 +12,7 @@ class Controller
   end
 
   def random_id
-    rand_id_no = rand(19..30)
+    rand_id_no = rand(4..11)
     select_flashcard(rand_id_no)
   end
 
@@ -37,7 +37,6 @@ class Controller
     end
   end
 
-
   def load_answer
     flashcard.answer
   end
@@ -58,7 +57,6 @@ class Controller
     gets.chomp
   end
 
-
   def add_flashcard(question, answer)
     #Shout out to amelia
   end
@@ -66,8 +64,4 @@ class Controller
   def exit_message
     view.exit_message
   end
-
-
-
-
 end

@@ -26,6 +26,7 @@ class View
   end
 
   def exit_message
+    puts " "
     puts "Goodbye for now ;)"
   end
 
