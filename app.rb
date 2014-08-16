@@ -20,15 +20,19 @@ class App
     puts "t or f?"
     puts " "
     user_input=gets.chomp
-    controller.check_answer(user_input)
-    user_input=gets.chomp
     if user_input=="exit"
       controller.exit_message
-    elsif user_input=="add"
-      controller.get_flashcard_properties
-      run
     else
-      run
+      controller.check_answer(user_input)
+      user_input=gets.chomp
+      if user_input=="exit"
+        controller.exit_message
+      elsif user_input=="add"
+        controller.get_flashcard_properties
+        run
+      else
+        run
+      end
     end
   end
 end
