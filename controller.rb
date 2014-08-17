@@ -11,8 +11,16 @@ class Controller
     @view=View.new
   end
 
+  def identify_length_of_db
+    sql_all_statement = "SELECT * FROM flashcards"
+    all_result = $db.execute(sql_all_statement)
+    num_of_rows_in_db = all_result.length
+    @max_rand_num = num_of_rows_in_db + 4
+  end
+
   def random_id
-    rand_id_no = rand(4..11)
+    identify_length_of_db
+    rand_id_no = rand(4..@max_rand_num)
     select_flashcard(rand_id_no)
   end
 
@@ -58,7 +66,8 @@ class Controller
   end
 
   def add_flashcard(question, answer)
-    #Shout out to amelia
+    insert_sql_statement = "INSERT INTO flashcards (question, answer, created_at, updated_at) VALUES ('#{question}', '#{answer}', DATETIME('now'), DATETIME('now'));"
+    $db.execute(insert_sql_statement)
   end
 
   def exit_message
